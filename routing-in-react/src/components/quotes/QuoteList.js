@@ -22,7 +22,6 @@ const QuoteList = (props) => {
   const isascending = queryParams.get("sort")==="asc"
 
   const newQuotes = sortQuotes(props.quotes,isascending)
-  console.log(location)
   const buttonHandler = ()=>{
     history.push("/quotes?sort=" + (isascending ? "desc" : "asc"))
 
