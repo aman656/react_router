@@ -43,7 +43,7 @@ const AllQuotes = ()=>{
     },[dispatch])
 
     return(
-        (alllist.length===0  ? <LoadingSpinner/>: <QuoteList quotes = {alllist}/>)
+        (alllist.length===0  ? <div className="centered"><LoadingSpinner/></div>: <QuoteList quotes = {alllist}/>)
     )
 }
 export default AllQuotes
