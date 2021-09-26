@@ -5,15 +5,15 @@ import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
 
-const sortQuotes = (quotes, ascending) => {
-  return quotes.sort((quoteA, quoteB) => {
-    if (ascending) {
-      return quoteA.id > quoteB.id ? 1 : -1;
-    } else {
-      return quoteA.id < quoteB.id ? 1 : -1;
-    }
-  });
-};
+// const sortQuotes = (quotes, ascending) => {
+//   return quotes.sort((quoteA, quoteB) => {
+//     if (ascending) {
+//       return quoteA.id > quoteB.id ? 1 : -1;
+//     } else {
+//       return quoteA.id < quoteB.id ? 1 : -1;
+//     }
+//   });
+// };
 
 const QuoteList = (props) => {
   const history = useHistory()
@@ -21,9 +21,9 @@ const QuoteList = (props) => {
   const queryParams = new URLSearchParams(location.search)
   const isascending = queryParams.get("sort")==="asc"
 
-  const newQuotes = sortQuotes(props.quotes,isascending)
+  // const newQuotes = sortQuotes(props.quotes,isascending)
   const buttonHandler = ()=>{
-    history.push("/quotes?sort=" + (isascending ? "desc" : "asc"))
+     history.push("/quotes?sort=" + (isascending ? "desc" : "asc"))
 
   }
   return (
@@ -32,7 +32,7 @@ const QuoteList = (props) => {
         <button onClick={buttonHandler}>Sort  {isascending ? "Descending":"Ascending"}</button>
       </div>
       <ul className={classes.list}>
-        {newQuotes.map((quote) => (
+        {props.quotes.map((quote) => (
           <QuoteItem
             key={quote.id}
             id={quote.id}
