@@ -80,7 +80,6 @@ export const fetchingSingleQuote =(id)=>{
                 text:dataget.text,
                 author:dataget.author
             }))
-            console.log(dataget.author)
 
         }catch(err){
             console.log(err)

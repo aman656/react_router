@@ -27,7 +27,7 @@ const Comments = (props) => {
     catch(err){
          throw new Error ("Something went wrong!");
     }   
-    console.log(props.path)
+   
 }
   const fetchingfromDatabase = useCallback(async()=>{
 
@@ -51,7 +51,7 @@ const Comments = (props) => {
         console.log(err)
 
     } 
-  },)
+  },[props.path])
   useEffect(()=>{
       fetchingfromDatabase()
     },[fetchingfromDatabase])
@@ -64,9 +64,9 @@ const Comments = (props) => {
           Add a Comment
         </button>
       )}
-      {isAddingComment && <NewCommentForm  onAddingComment = {addingComment}  />}
+      {isAddingComment && <NewCommentForm  onAddingComment = {addingComment}/>}
       <p>Comments...</p>
-      <CommentsList  comments = {allcomments}             />
+      <CommentsList  comments = {allcomments}    />
     </section>
   );
 };

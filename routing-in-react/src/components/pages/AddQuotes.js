@@ -1,9 +1,9 @@
 import QuoteForm from '../quotes/QuoteForm'
 import { useHistory } from 'react-router'
-import { useEffect } from 'react';
+
 
 const AddQuote = ()=>{
-    let status;
+    
     const history = useHistory()
     // useEffect(()=>{
     //     if(status==="completed"){

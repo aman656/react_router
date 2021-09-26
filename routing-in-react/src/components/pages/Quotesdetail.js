@@ -22,8 +22,7 @@ const QuoteDetail = ()=>{
     
 
     },[dispatch,params.id])
-   
-    console.log(single)
+
     // let error;
     // if(single===null){
     //     error="No quotes found"

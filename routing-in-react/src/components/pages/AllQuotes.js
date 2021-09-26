@@ -8,7 +8,6 @@ const AllQuotes = ()=>{
     // const [DUMMY_LIST,setDUMMY_LIST] = useState([])
     const alllist = useSelector(state=>state.quoteReducer.quotesList)
     const dispatch = useDispatch()
-    console.log("data")
     // const fetchingfromDatabase = useCallback(async()=>{
     
     //     try{
